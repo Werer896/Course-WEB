@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реєстрація</title>
+    <link rel="icon" href="img/logo.jpg" type="image"></head>
+   
+</head>
+<body>
+
+    <h2>Реєстрація</h2>
+
+  <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="books.html">Книги</a></li>
+                <li><a href="admin.html">Адмін панель</a></li>
+                
+                <li><a href="searchbook.html">Пошук книг</a></li>
+                <li><a href="profile.html">Профіль</a></li>
+                <li><a href="login.html">Логін/Реєстрація</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+<form action="register.php" method="POST" enctype="multipart/form-data" >
+    <input type="text" name="firt_name" placeholder="Ім'я" required><br>
+    <input type="text" name="last_name" placeholder="Прізвище" required><br>
+    <input type="text" name="nickname" placeholder="Нікнейм" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="password" name="password" placeholder="Пароль" required><br>
+    <button type="submit">Зареєструватися</button><br>
+    
+</form>
+
+<footer>
+    <p>&copy; 2025 Онлайн Бібліотека. Всі права захищені.</p>
+  </footer>
+
+
+</body>
+</html>

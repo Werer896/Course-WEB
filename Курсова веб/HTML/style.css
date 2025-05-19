@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e, #1f1c2c);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  color: white;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 15px 0;
+  box-shadow: 0 2px 10px rgba(0, 255, 255, 0.4);
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  color: cyan;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #00f7ff;
+  text-shadow: 0 0 5px cyan;
+}
+
+.container {
+  margin-top: 200px;
+  width: 320px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  background: transparent;
+  color: white;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  border-color: cyan;
+}
+
+form {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form.active {
+  display: flex;
+}
+
+input, button[type="submit"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  outline: none;
+}
+
+input {
+  background: #f0f0f0;
+}
+
+button[type="submit"] {
+  background: cyan;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background: #00f7ff;
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px;
+  color: #ccc;
+}

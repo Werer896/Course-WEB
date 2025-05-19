@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профіль</title>
+   <link rel="icon" href="img/logo.jpg" type="image">
+   <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Профіль</h1>
+ <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="books.html">Книги</a></li>
+                <li><a href="admin.html">Адмін панель</a></li>
+                
+                <li><a href="searchbook.html">Пошук книг</a></li>
+                <li><a href="profile.html">Профіль</a></li>
+                <li><a href="login.html">Логін/Реєстрація</a></li>
+            </ul>
+        </nav>
+    </header>
+
+   <div class="profile-container">
+  <h2>Профіль користувача</h2>
+  
+  
+ <p><strong>Ім’я:</strong> <input type="text" placeholder="Введіть ім’я" id="name" disabled></p>
+<p><strong>Прізвище:</strong> <input type="text" placeholder="Введіть прізвище" id="surname" disabled></p>
+<p><strong>Нікнейм:</strong> <input type="text" placeholder="Введіть нікнейм" id="nickname" disabled></p>
+<p><strong>Email:</strong> <input type="email" placeholder="Введіть email" id="email" disabled></p>
+
+<button onclick="enableEdit()">Редагувати профіль</button>
+<button onclick="saveChanges()" id="saveBtn" style="display: none;">Зберегти</button>
+  <div class="profile-actions">
+    
+  <button onclick="logout()">Вийти з профілю</button>
+  </div>
+ </div>
+ <h1>📚 Мій список для читання</h1>
+ 
+ <div class="input-container">
+
+   <form id="reading-form">
+     <input type="text" id="book-title" placeholder="Назва книги" required><br>
+     <input type="text" id="book-author" placeholder="Автор книги"><br><br>
+     <button type="submit">Додати до списку</button>
+    </form>
+    
+    <ul id="reading-list">
+      <!-- Книги додаються тут -->
+    </ul>
+  </div>
+    
+<footer>
+    <p>&copy; 2025 Онлайн Бібліотека. Всі права захищені.</p>
+  </footer>
+
+
+ <script>
+ function enableEdit() {
+  // Увімкнути редагування полів
+  document.getElementById("name").disabled = false;
+  document.getElementById("surname").disabled = false;
+  document.getElementById("nickname").disabled = false;
+  document.getElementById("email").disabled = false;
+
+  // Показати кнопку "Зберегти"
+  document.getElementById("saveBtn").style.display = "inline-block";
+}
+
+function saveChanges() {
+  // Заблокувати поля для редагування
+  document.getElementById("name").disabled = true;
+  document.getElementById("surname").disabled = true;
+  document.getElementById("nickname").disabled = true;
+  document.getElementById("email").disabled = true;
+
+  // Приховати кнопку "Зберегти"
+  document.getElementById("saveBtn").style.display = "none";
+
+  // Можеш тут додати логіку збереження (у локальне сховище, або на сервер)
+  alert("Зміни збережено!");
+}
+    const form = document.getElementById('reading-form');
+    const list = document.getElementById('reading-list');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const title = document.getElementById('book-title').value;
+      const author = document.getElementById('book-author').value;
+
+      const li = document.createElement('li');
+      li.innerHTML = `
+        <span><strong>${title}</strong>${author ? ' — ' + author : ''}</span>
+        <button class="remove-btn">✖</button>
+      `;
+
+      li.querySelector('.remove-btn').onclick = () => li.remove();
+      list.appendChild(li);
+
+      form.reset();
+    });
+  </script>
+
+</body>
+</html>
