@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бібліотека</title>
+    <link rel="icon" href="img/logo.jpg" type="image">
+    <link rel="stylesheet" href="styles.css">
+    </head>
+<body>
+     <h1>Бібліотека</h1>
+     <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="books.html">Книги</a></li>
+                <li><a href="admin.html">Адмін панель</a></li>
+                
+                <li><a href="searchbook.html">Пошук книг</a></li>
+                <li><a href="profile.html">Профіль</a></li>
+                <li><a href="login.html">Логін/Реєстрація</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <form action="search.php" method="GET" class="search-form">
+  <input type="text" name="query" placeholder="Пошук книги за назвою або автором" required>
+  <button type="submit">🔍 Пошук</button>
+</form>
+
+<section class="search-results">
+  <h2>Результати пошуку:</h2>
+  <div class="books-grid">
+    <!-- Тут бекенд підставить знайдені книги -->
+    <div class="book">
+      <img src="img/book.jpg" alt="Назва книги">
+      <h3>Назва книги</h3>
+      <p>Автор: Ім’я Автора</p>
+      <button>Читати</button>
+    </div>
+  </div>
+</section>
+
+<script>
+    document.querySelector('.search-form').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  const query = this.query.value;
+  const response = await fetch(`/api/search?query=${encodeURIComponent(query)}`);
+  const books = await response.json();
+
+  const resultsContainer = document.querySelector('.books-grid');
+  resultsContainer.innerHTML = ''; // Очищаємо старі результати
+
+  books.forEach(book => {
+    resultsContainer.innerHTML += `
+      <div class="book">
+        <img src="${book.image}" alt="${book.title}">
+        <h3>${book.title}</h3>
+        <p>Автор: ${book.author}</p>
+        <button>Читати</button>
+      </div>
+    `;
+  });
+});
+
+</script>
+
+<footer>
+    <p>&copy; 2025 Онлайн Бібліотека. Всі права захищені.</p>
+  </footer>
+
+</body>
+</html>
