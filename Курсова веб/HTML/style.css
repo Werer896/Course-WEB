@@ -1,0 +1,158 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-image: 
+    radial-gradient(circle at top left, #fcefe8, transparent),
+    radial-gradient(circle at bottom right, #e6f0fa, transparent),
+    linear-gradient(135deg, rgba(255, 234, 238, 0.4) 0%, rgba(234, 247, 255, 0.4) 100%),
+    url('https://www.transparenttextures.com/patterns/gplay.png');
+  background-attachment: fixed;
+  background-repeat: no-repeat, no-repeat, no-repeat, repeat;
+  background-size: cover, cover, cover, auto;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+header {
+  width: 100%;
+  background: #fff;
+  padding: 15px 0;
+  border-bottom: 1px solid #eaeaea;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: #e74c3c;
+}
+
+.container {
+  margin-top: 100px;
+  width: 360px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  flex: 1;
+  padding: 10px;
+  background: transparent;
+  color: #333;
+  border: none;
+  border-bottom: 2px solid transparent;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.tabs button.active {
+  border-color: #e74c3c;
+  color: #e74c3c;
+}
+
+form {
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form.active {
+  display: flex;
+}
+
+input, button[type="submit"] {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 16px;
+}
+
+input {
+  background: #fff;
+  color: #000;
+}
+
+button[type="submit"] {
+  background: #e74c3c;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #c0392b;
+}
+
+footer {
+  margin-top: auto;
+  padding: 20px;
+  color: #999;
+  font-size: 14px;
+  background: #f8f8f8;
+  border-top: 1px solid #eaeaea;
+}
+
+/* Dark theme */
+body.dark-theme {
+  background-color: #121212;
+  color: #f0f0f0;
+  background-image: none;
+}
+
+body.dark-theme header,
+body.dark-theme .container,
+body.dark-theme nav ul li a,
+body.dark-theme input,
+body.dark-theme button[type="submit"] {
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border: 1px solid #333;
+}
+
+body.dark-theme nav ul li a:hover {
+  color: #e67e22;
+}
+
+body.dark-theme button[type="submit"] {
+  background-color: #e67e22;
+}
+
+body.dark-theme button[type="submit"]:hover {
+  background-color: #ca6f1e;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="icon" href="img/logo.jpg" type="image">
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+              <button id="theme-toggle">🌙 Темна тема</button>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="books.html">Книги</a></li>
+                <li><a href="admin.html">Адмін панель</a></li>
+                
+                <li><a href="searchbook.html">Пошук книг</a></li>
+                <li><a href="profile.html">Профіль</a></li>
+                <li><a href="login.html">Логін/Реєстрація</a></li>
+            </ul>
+        </nav>
+    </header>
+  
+
+
+  <div class="container">
+    <div class="tabs">
+      <button id="loginTab" class="active" onclick="showForm('login')">Увійти</button>
+      <button id="registerTab" onclick="showForm('register')">Зареєструватись</button>
+    </div>
+
+    <!-- Форма входу -->
+    <form id="loginForm" class="active" action="login.php" method="POST">
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Пароль" required>
+      <button type="submit">Увійти</button>
+    </form>
+
+    <!-- Форма реєстрації -->
+    <form id="registerForm" action="register.php" method="POST">
+      <input type="text" name="first_name" placeholder="Ім'я" required>
+      <input type="text" name="last_name" placeholder="Прізвище" required>
+      <input type="text" name="nickname" placeholder="Нікнейм" required>
+      <input type="email" name="email" placeholder="Email" required>
+      <input type="password" name="password" placeholder="Пароль" required>
+      <button type="submit">Зареєструватись</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Онлайн Бібліотека. Всі права захищені.</p>
+  </footer>
+
+   <script src="script.js"></script> 
+</body>
+</html>
